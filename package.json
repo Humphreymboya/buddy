@@ -20,6 +20,5 @@
     "opencode",
     "speech-recognition",
     "text-to-speech"
-  ],
-  "license": "MIT"
+  ]
 }
