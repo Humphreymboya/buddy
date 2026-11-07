@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>BUDDY</title>
+<link rel="icon" href="/favicon.svg" />
+<link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div class="scanlines"></div>
+<div class="vignette"></div>
+
+<div id="app" class="idle">
+  <div class="frame">
+    <i class="brc tl"></i><i class="brc tr"></i><i class="brc bl"></i><i class="brc br"></i>
+  </div>
+
+  <header class="hud-top">
+    <div class="brand">
+      <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M24 3 42 13.5v21L24 45 6 34.5v-21L24 3Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <path d="M24 9 36.5 16.5v15L24 39 11.5 31.5v-15L24 9Z" fill="none" stroke="currentColor" stroke-width=".7" opacity=".5"/>
+        <circle cx="24" cy="24" r="5.2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+        <circle cx="24" cy="24" r="1.7" fill="currentColor"/>
+      </svg>
+      <div class="brand-text">
+        <h1>BUDDY</h1>
+        <p>PERSONAL ASSISTANT <span class="sep">/</span> MARK&nbsp;I</p>
+      </div>
+    </div>
+
+    <div class="status" id="statusPill">
+      <span class="dot"></span>
+      <span id="statusText">STANDBY</span>
+      <span class="bars"><i></i><i></i><i></i><i></i></span>
+    </div>
+
+    <div class="clockbox">
+      <div id="clock">--:--</div>
+      <div id="date">—</div>
+    </div>
+  </header>
+
+  <main class="hud-body">
+    <aside class="panel left">
+      <div class="panel-head"><span>CONVERSATION</span><button id="clearBtn" title="Start a new session">RESET</button></div>
+      <div id="log" class="log">
+        <div class="empty">No transmissions yet.</div>
+      </div>
+    </aside>
+
+    <section class="core">
+      <div class="orb-wrap">
+        <div class="orb-halo"></div>
+        <canvas id="orb"></canvas>
+      </div>
+      <div class="caption">
+        <div id="stateLine" class="state-line">SAY “BUDDY” TO BEGIN</div>
+        <div id="heard" class="heard"></div>
+      </div>
+    </section>
+
+    <aside class="panel right">
+      <div class="panel-head"><span>SYSTEM ACTIVITY</span><span id="latency" class="lat">—</span></div>
+      <div id="activity" class="activity"><div class="empty">Idle.</div></div>
+    </aside>
+  </main>
+
+  <footer class="hud-foot">
+    <div class="inputbar">
+      <button id="micBtn" class="mic" aria-label="Talk to Buddy">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15a3.5 3.5 0 0 0 3.5-3.5V6a3.5 3.5 0 1 0-7 0v5.5A3.5 3.5 0 0 0 12 15Z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      </button>
+      <input id="input" type="text" autocomplete="off" spellcheck="false" placeholder="Type a command, or say “Buddy”…" />
+      <button id="sendBtn" class="send">SEND</button>
+    </div>
+    <div class="hints">
+      <span><kbd>SPACE</kbd> hold to talk</span>
+      <span><kbd>CTRL</kbd>+<kbd>ALT</kbd>+<kbd>B</kbd> summon</span>
+      <span id="engineHint">LOCAL ENGINE · READY</span>
+    </div>
+  </footer>
+</div>
+
+<div id="boot" class="boot">
+  <div class="boot-inner">
+    <div class="boot-ring"></div>
+    <div class="boot-title">BUDDY</div>
+    <div class="boot-sub" id="bootSub">INITIALISING CORE</div>
+  </div>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>

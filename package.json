@@ -1,0 +1,25 @@
+{
+  "name": "buddy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "JARVIS-style voice assistant for Windows that controls the desktop through the OpenCode agent CLI",
+  "main": "server.js",
+  "scripts": {
+    "start": "powershell -NoProfile -ExecutionPolicy Bypass -File ./start-buddy.ps1",
+    "stop": "powershell -NoProfile -ExecutionPolicy Bypass -File ./stop-buddy.ps1",
+    "install-app": "powershell -NoProfile -ExecutionPolicy Bypass -File ./install.ps1",
+    "serve": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "voice-assistant",
+    "jarvis",
+    "windows",
+    "opencode",
+    "speech-recognition",
+    "text-to-speech"
+  ],
+  "license": "MIT"
+}

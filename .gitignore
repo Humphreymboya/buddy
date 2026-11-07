@@ -1,0 +1,20 @@
+# runtime state (private: conversations, session ids, audit trail)
+data/
+logs/
+
+# local Chrome app profile (large, contains cookies/storage)
+chrome-profile/
+
+# dependencies / build output
+node_modules/
+*.log
+
+# OS / editor noise
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/
+
+# generated shortcuts
+*.lnk
